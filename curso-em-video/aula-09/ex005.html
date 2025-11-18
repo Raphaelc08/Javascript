@@ -21,11 +21,31 @@
 
     <div id="msg"> Clique em mim </div>
 
+    <div name="nome-div"> Div com name</div>
+
+    <div id="yuy"> Seletor </div>
+
     <script>    
-        var p1 = document.querySelector('div#msg')
-        p1.innerHTML = 'Estou aguardando...'
-        p1.style.background = "blue"
-        p1.style.color = "#5efa"
+        /* Selecionando o elemtento por tag, e mostrando na tela */
+        var p1 = window.document.getElementsByTagName('p')[0]
+        var p2 = window.document.getElementsByTagName('p')[1]
+        window.document.writeln('O primeiro parágrafo está escrito: ' + p1.innerHTML) 
+
+        /* Selecionando o elemento por ID e fazendo alterações no estilo do elemento */
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.style.textAlign = 'center'
+        d.innerText = 'Mudando o texto atráves do DOM...'
+
+        /* Selecionando o elemento por Name */
+        var n = window.document.getElementsByName('nome-div')[0]
+        n.style.background = 'blue'
+        n.style.marginTop = '10px'
+        n.style.paddingLeft = '10px'
+
+        /* Selecionando por Seletor */ 
+        var s = window.document.querySelector('div#yuy')
+        s.innerText = 'Selecionando por seletor kkkkkk'
     </script>
     
 </body>
