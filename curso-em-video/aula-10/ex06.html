@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Eventos DOM </title>
+
+    <style>
+        div#area{
+            background: rgb(5, 201, 191);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        div#area2{
+            background: #ff0000;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+
+    <div id="area2">
+        JS comandando
+    </div>
+
+    <script>
+        var a = document.getElementById('area')
+        function clicar(){
+            a.innerText = 'Clicou'
+            a.style.background = 'red'
+        }
+
+        function entrar(){
+            a.innerText = 'Entrou'
+            a.style.fontSize = '25px'
+            a.style.background = 'rgb(4, 136, 129)'
+        }
+
+        function sair(){
+            a.innerText = 'Saiu'
+            a.style.fontSize = '20px'
+            a.style.background = 'rgb(5, 201, 191)'
+        }
+
+        var b = document.getElementById('area2')
+        b.addEventListener('click', clicou)
+        b.addEventListener('mouseenter', entrou)
+        b.addEventListener('mouseout', saiu)
+
+        function clicou(){
+            b.innerText = 'Clicou!'
+            b.style.background = 'yellow'
+            b.style.color = 'black'
+        }
+
+        function entrou(){
+            b.innerText = 'Entrou'
+            b.style.fontSize = '25px'
+            b.style.background = '#910202'
+
+        }
+
+        function saiu(){
+            b.innerText = 'Saiu'
+            b.style.fontSize = '20px'
+            b.style.background = 'red'
+            b.style.color = 'white'
+        }
+    </script>
+    
+</body>
+</html>
